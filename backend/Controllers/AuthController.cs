@@ -7,15 +7,17 @@ public class AuthController : ControllerBase
     [HttpPost("login")]
     public IActionResult Login([FromBody] LoginRequest request)
     {
-        if (request.Email == "admin@example.com" && request.Password == "1234")
-            return Ok(new { token = "fake-jwt-token" });
+        if (request.Email == "test@example.com" && request.Password == "123456")
+        {
+            return Ok(new { token = "test-jwt-token" });
+        }
 
         return Unauthorized();
     }
 }
-
 public class LoginRequest
 {
-    public string Email { get; set; } = string.Empty;
-    public string Password { get; set; } = string.Empty;
+    public string Email { get; set; }
+    public string Password { get; set; }
 }
+

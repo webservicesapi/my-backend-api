@@ -10,16 +10,16 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-        const response = await axios.post('https://my-backend-api-qezu.onrender.com/Auth/login', {
-            email,
-            password,
-          });
-          
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/Auth/login`, {
+        email,
+        password,
+      });
+
       localStorage.setItem('token', response.data.token);
       navigate('/dashboard');
     } catch (err) {
-        console.error("Login error:", err.response || err.message || err);
-        alert("Login failed!");
+      console.error("Login error: ", err.response || err.message || err);
+      alert("Login failed!");
     }
   };
 

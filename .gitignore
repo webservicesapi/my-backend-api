@@ -1,0 +1,4 @@
+backend/publish/
+backend/bin/
+backend/obj/
+node_modules/

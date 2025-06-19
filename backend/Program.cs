@@ -13,15 +13,14 @@ builder.Services.AddCors(options =>
                         .AllowAnyHeader());
 });
 
-
 var app = builder.Build();
 
 app.UseSwagger();
 app.UseSwaggerUI();
 
-app.UseHttpsRedirection();
+// ✅ Disable or restrict HTTPS redirection
+// app.UseHttpsRedirection(); // <-- Commented out for Render
 
-// ✅ Enable CORS
 app.UseCors("AllowAll");
 
 app.UseAuthorization();

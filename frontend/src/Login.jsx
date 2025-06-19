@@ -10,7 +10,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-        const response = await axios.post('http://localhost:5007/Auth/login', {
+        const response = await axios.post('https://my-backend-api-qezu.onrender.com/Auth/login', {
             email,
             password,
           });
